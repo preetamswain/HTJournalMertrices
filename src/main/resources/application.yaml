@@ -1,26 +1,9 @@
-spring:
+security:
   dialect: org.hibernate.dialect.MySQL8Dialect
-  driver-class-name: com.mysql.cj.jdbc.Driver
-  db-op: create
-
-db0:
-  localhost:
-    name: task
-    url: jdbc:mysql://localhost:3306/task
-    username: root
-    password: '9090'
-db1:
-  security:
-    name: security
-    url: jdbc:mysql://localhost:3306/security
-    username: root
-    password: '9090'
-db2:
-  rest:
-    name: restapi
-    url: jdbc:mysql://localhost:3306/restapi
-    username: root
-    password: '9090'
+  dbop: create
+  url: jdbc:mysql://localhost:3306/security
+  username: root
+  password: '9090'
 
 logging:
   level:
