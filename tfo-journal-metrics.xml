@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE custom-properties
+		PUBLIC "-//Atypon//DTD Literatum Custom Properties DTD v1.0 20160331//EN"
+		"atypon_tandf_dtd/customproperties.1.0.dtd">
+<custom-properties>
+	<publication doi="10.1080/uucp20" mode="specific">
+		<custom-property name="impactFactor2y" media-type="text-plain"><![CDATA[0.500 (2020)]]></custom-property>
+		<custom-property name="impactFactor5y" media-type="text-plain"><![CDATA[0.401 (2020)]]></custom-property>
+		<custom-property name="citeScore" media-type="text-plain"><![CDATA[0.7 (2020)]]></custom-property>
+		<custom-property name="SNIP" media-type="text-plain"><![CDATA[0.659 (2020)]]></custom-property>
+		<custom-property name="SJR" media-type="text-plain"><![CDATA[0.449 (2020)]]></custom-property>
+		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[1204]]></custom-property>
+		<custom-property name="speedSubPRDec" media-type="text-plain"><![CDATA[1257]]></custom-property>
+		<custom-property name="speedAcceptPub" media-type="text-plain"><![CDATA[65]]></custom-property>
+		<custom-property name="acceptanceRate" media-type="text-plain"><![CDATA[10%]]></custom-property>
+		<custom-property name="usage" media-type="text-plain"><![CDATA[34K]]></custom-property>
+	</publication>
+	<publication doi="10.1080/abcd" mode="specific">
+		<custom-property name="impactFactor2y" media-type="text-plain"><![CDATA[0.386 (2020)]]></custom-property>
+		<custom-property name="impactFactor5y" media-type="text-plain"><![CDATA[0.451 (2020)]]></custom-property>
+		<custom-property name="citeScore" media-type="text-plain"><![CDATA[0.7 (2020)]]></custom-property>
+		<custom-property name="SNIP" media-type="text-plain"><![CDATA[0.659 (2020)]]></custom-property>
+		<custom-property name="SJR" media-type="text-plain"><![CDATA[0.449 (2020)]]></custom-property>
+		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[1204]]></custom-property>
+		<custom-property name="speedSubPRDec" media-type="text-plain"><![CDATA[1257]]></custom-property>
+		<custom-property name="speedAcceptPub" media-type="text-plain"><![CDATA[65]]></custom-property>
+		<custom-property name="acceptanceRate" media-type="text-plain"><![CDATA[20%]]></custom-property>
+		<custom-property name="usage" media-type="text-plain"><![CDATA[34K]]></custom-property>
+	</publication>
+	<publication doi="10.1080/efgh" mode="specific">
+		<custom-property name="citeScore" media-type="text-plain"><![CDATA[0.9 (2020)]]></custom-property>
+		<custom-property name="SNIP" media-type="text-plain"><![CDATA[0.399 (2020)]]></custom-property>
+		<custom-property name="SJR" media-type="text-plain"><![CDATA[0.168 (2020)]]></custom-property>
+		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[1001]]></custom-property>
+		<custom-property name="speedSubPRDec" media-type="text-plain"><![CDATA[1001]]></custom-property>
+		<custom-property name="acceptanceRate" media-type="text-plain"><![CDATA[90%]]></custom-property>
+		<custom-property name="usage" media-type="text-plain"><![CDATA[14K]]></custom-property>
+	</publication>
+</custom-properties>

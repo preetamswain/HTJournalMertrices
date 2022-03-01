@@ -1,0 +1,24 @@
+<!-- 
+	"-//Atypon//DTD Literatum Custom Properties Response DTD v1.0 20160331//EN"
+	Delivered as file "atypon_tandf_dtd/custompropertiesresp.1.0.dtd"
+-->
+
+        <!ELEMENT response (response-code, response-message?, response-stack-trace?, publication*)>
+
+        <!ELEMENT response-code (#PCDATA)>
+
+        <!ELEMENT response-message (#PCDATA)>
+
+        <!ELEMENT response-stack-trace (#PCDATA)>
+
+        <!ELEMENT publication (status-code, message?, stack-trace?)>
+
+        <!ATTLIST publication
+                doi CDATA #REQUIRED
+                >
+
+        <!ELEMENT status-code (#PCDATA)>
+
+        <!ELEMENT message (#PCDATA)>
+
+        <!ELEMENT stack-trace (#PCDATA)>
