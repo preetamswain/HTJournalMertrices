@@ -9,7 +9,7 @@
 		<custom-property name="citeScore" media-type="text-plain"><![CDATA[0.7 (2020)]]></custom-property>
 		<custom-property name="SNIP" media-type="text-plain"><![CDATA[0.659 (2020)]]></custom-property>
 		<custom-property name="SJR" media-type="text-plain"><![CDATA[0.449 (2020)]]></custom-property>
-		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[1204]]></custom-property>
+		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[120]]></custom-property>
 		<custom-property name="speedSubPRDec" media-type="text-plain"><![CDATA[1257]]></custom-property>
 		<custom-property name="speedAcceptPub" media-type="text-plain"><![CDATA[65]]></custom-property>
 		<custom-property name="acceptanceRate" media-type="text-plain"><![CDATA[10%]]></custom-property>
@@ -21,7 +21,7 @@
 		<custom-property name="citeScore" media-type="text-plain"><![CDATA[0.7 (2020)]]></custom-property>
 		<custom-property name="SNIP" media-type="text-plain"><![CDATA[0.659 (2020)]]></custom-property>
 		<custom-property name="SJR" media-type="text-plain"><![CDATA[0.449 (2020)]]></custom-property>
-		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[1204]]></custom-property>
+		<custom-property name="speedSubDec" media-type="text-plain"><![CDATA[120]]></custom-property>
 		<custom-property name="speedSubPRDec" media-type="text-plain"><![CDATA[1257]]></custom-property>
 		<custom-property name="speedAcceptPub" media-type="text-plain"><![CDATA[65]]></custom-property>
 		<custom-property name="acceptanceRate" media-type="text-plain"><![CDATA[20%]]></custom-property>

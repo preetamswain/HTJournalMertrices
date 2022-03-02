@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface JournalDao {
     public void createJournal(boolean sORu);
-
     public List<Journal> getAllJournal();
 }

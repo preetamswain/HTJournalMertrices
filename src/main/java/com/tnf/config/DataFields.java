@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @Component
-@ConfigurationProperties(prefix = "db")
-public class Fields {
+@ConfigurationProperties(prefix = "props")
+public class DataFields {
     private String dialect;
     private String dbop;
     private String name;

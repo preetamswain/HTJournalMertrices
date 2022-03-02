@@ -23,27 +23,27 @@ public class Journal {
     @Id
     private String acronym = "";
     @Column(columnDefinition = "varchar(13)")
-    private String impactfactor2y;
+    private String impactfactor2y = "";
     @Column(columnDefinition = "varchar(9)")
-    private String ifbestquartile;
+    private String ifbestquartile = "";
     @Column(columnDefinition = "varchar(13)")
-    private String impactfactor5y;
+    private String impactfactor5y = "";
     @Column(columnDefinition = "varchar(11)")
-    private String citescore;
+    private String citescore = "";
     @Column(columnDefinition = "varchar(12)")
-    private String snip;
+    private String snip = "";
     @Column(columnDefinition = "varchar(13)")
-    private String sjr;
+    private String sjr = "";
+    @Column(columnDefinition = "varchar(3)")
+    private String speedsubdec = "";
     @Column(columnDefinition = "varchar(4)")
-    private String speedsubdec;
+    private String speedsubprdec = "";
+    @Column(columnDefinition = "varchar(3)")
+    private String speedacceptpub = "";
     @Column(columnDefinition = "varchar(4)")
-    private String speedsubprdec;
-    @Column(columnDefinition = "varchar(4)")
-    private String speedacceptpub;
-    @Column(columnDefinition = "varchar(4)")
-    private String acceptancerate;
+    private String acceptancerate = "";
     @Column(columnDefinition = "varchar(13)")
-    private String citescorebestquartile;
+    private String citescorebestquartile = "";
     @Column(name = "`usage`", columnDefinition = "varchar(9)")
-    private String usages;
+    private String usages = "";
 }

@@ -1,9 +1,8 @@
 package com.tnf.dao;
 
 import com.tnf.entity.Journal;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.w3c.dom.Element;
@@ -13,6 +12,7 @@ import org.w3c.dom.NodeList;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
+import java.util.Objects;
 
 import static com.tnf.builder.DocBuilder.*;
 
@@ -20,15 +20,7 @@ import static com.tnf.builder.DocBuilder.*;
 @Transactional
 public class JournalDaoImpl implements JournalDao {
     @Autowired
-    private SessionFactory factory;
-
-    public Session getSession() {
-        Session session = factory.getCurrentSession();
-        if (session == null) {
-            session = factory.openSession();
-        }
-        return session;
-    }
+    HibernateTemplate hibernateTemplate;
 
     @Override
     public void createJournal(boolean sORu) {
@@ -36,12 +28,11 @@ public class JournalDaoImpl implements JournalDao {
         int length = parentNodeList.getLength();
         System.out.println("parentNodeList.getLength(): " + length);
         for (int pnIndex = 0; pnIndex < length; pnIndex++) {
-            Journal j = new Journal();
+            Journal journal = new Journal();
             Node parentNode = parentNodeList.item(pnIndex);
             Element eElement = (Element) parentNode;
-            String doi = eElement.getAttribute(attribute);
-            String acronym = doi.trim().substring(8, 12).toUpperCase();
-            j.setAcronym(acronym);
+            String acronym = eElement.getAttribute(attribute).trim().substring(8, 12).toUpperCase();
+            journal.setAcronym(acronym);
             System.out.println("INSERTING INTO " + acronym);
             NodeList childNodeList = (eElement).getElementsByTagName(tagName);
             for (int cnIndex = 0; cnIndex < childNodeList.getLength(); cnIndex++) {
@@ -51,58 +42,66 @@ public class JournalDaoImpl implements JournalDao {
                 String data = eElement.getElementsByTagName(tagName).item(cnIndex).getTextContent().trim();
                 switch (cpname) {
                     case "impactFactor2y":
-                        j.setImpactfactor2y(data);
+                        journal.setImpactfactor2y(data);
                         break;
                     case "ifBestQuartile":
-                        j.setIfbestquartile(data);
+                        journal.setIfbestquartile(data);
                         break;
                     case "impactFactor5y":
-                        j.setImpactfactor5y(data);
+                        journal.setImpactfactor5y(data);
                         break;
                     case "citeScore":
-                        j.setCitescore(data);
+                        journal.setCitescore(data);
                         break;
                     case "SNIP":
-                        j.setSnip(data);
+                        journal.setSnip(data);
                         break;
                     case "SJR":
-                        j.setSjr(data);
+                        journal.setSjr(data);
                         break;
                     case "speedSubDec":
-                        j.setSpeedsubdec(data);
+                        journal.setSpeedsubdec(data);
                         break;
                     case "speedSubPRDec":
-                        j.setSpeedsubprdec(data);
+                        journal.setSpeedsubprdec(data);
                         break;
                     case "speedAcceptPub":
-                        j.setSpeedacceptpub(data);
+                        journal.setSpeedacceptpub(data);
                         break;
                     case "acceptanceRate":
-                        j.setAcceptancerate(data);
+                        journal.setAcceptancerate(data);
                         break;
                     case "citeScoreBestQuartile":
-                        j.setCitescorebestquartile(data);
+                        journal.setCitescorebestquartile(data);
                         break;
                     case "usage":
-                        j.setUsages(data);
+                        journal.setUsages(data);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + data);
                 }
             }
             if (sORu) {
-                getSession().save(j);
+                hibernateTemplate.save(journal);
             } else {
-                getSession().update(j);
+                hibernateTemplate.update(journal);
             }
         }
     }
 
     @Override
     public List<Journal> getAllJournal() {
-        CriteriaQuery<Journal> cq = getSession().getCriteriaBuilder().createQuery(Journal.class);
-        Root<Journal> journalRoot = cq.from(Journal.class);
-        CriteriaQuery<Journal> select = cq.select(journalRoot);
-        return getSession().createQuery(select).getResultList();
+        CriteriaQuery<Journal> query = Objects
+                .requireNonNull(hibernateTemplate.getSessionFactory())
+                .getCurrentSession()
+                .getCriteriaBuilder()
+                .createQuery(Journal.class);
+        Root<Journal> root = query.from(Journal.class);
+        CriteriaQuery<Journal> select = query.select(root);
+        return hibernateTemplate
+                .getSessionFactory()
+                .getCurrentSession()
+                .createQuery(select)
+                .getResultList();
     }
 }
